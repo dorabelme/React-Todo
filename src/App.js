@@ -7,34 +7,29 @@ import './components/TodoComponents/Todo.scss';
 
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
   constructor(props) {
     super(props);
     this.localStorageKey = 'todo-state';
-    this.state = { todoListData: [], searchedTodo: '', ...(JSON.parse(window.localStorage.getItem(this.localStorageKey)) || {})}
-    // this.state = JSON.parse(window.localStorage.getItem(this.localStorageKey)) || {
-    //   todoListData: [],
-    //   searchedTodo: ''
-    // };
+    // this.state = { todoListData: [], searchedTodo: '', ...(JSON.parse(window.localStorage.getItem(this.localStorageKey)) || {}) };
+    this.state = {
+      todoListData: [],
+      searchedTodo: ''
+    };
   }
   
-  componentDidMount() {
-    window.addEventListener(
-      "beforeunload",
-      () => window.localStorage.setItem(this.localStorageKey, JSON.stringify(this.state))
-    );
-  }
+  // componentDidMount() {
+  //   window.addEventListener(
+  //     "beforeunload",
+  //     () => window.localStorage.setItem(this.localStorageKey, JSON.stringify(this.state))
+  //   );
+  // }
 
   updateList = event => {
-    // const copyList = this.state.todoListData.slice();
     const newTodo = {
       todo: event,
       id: Date.now(),
       completed: false
     };
-    // copyList.push(newTodo);
     this.setState({
       todoListData: [...this.state.todoListData, newTodo]
     })

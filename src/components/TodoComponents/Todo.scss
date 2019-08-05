@@ -38,7 +38,7 @@ input {
 
     h3 {
         text-align: center;
-        margin: 0 auto;
+        margin: 20px 0 auto 0;
         width: 100%;
         font-size: 20px;
         padding: 10px;
@@ -114,6 +114,21 @@ input {
     }
     .completed {
 	    text-decoration: line-through;
+    }
+
+    .search-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #search-btn {
+        padding: 0;
+        margin: 0 0 0 10px;;
+        font-size: 13px;
+        width: 65px;
+        height: 40px;
     }
 }
 

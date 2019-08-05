@@ -24,14 +24,14 @@ class SearchForm extends Component {
 
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="search-box">
                     <input type="text"
                         icon="search"
                         placeholder="Search"
                         name="searchedTodo"
                         value={searchedTodo}
                         onChange={this.handleChange} />
-                    <button className="btn add-btn" type="submit">Search</button>
+                    <button className="btn add-btn" id="search-btn" type="submit">Search</button>
                 </form>
             </div>
         )
