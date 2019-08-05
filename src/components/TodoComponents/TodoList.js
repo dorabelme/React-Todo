@@ -4,12 +4,10 @@ import React from 'react';
 import Todo from './Todo';
 
 const TodoList = (props) =>{
-    const {todos} = props
-
         return (
             <div className="array-container">
-                <h3 className="instr">Todo List:</h3>
-                <p className="instr">Click a todo to mark it complete!</p>
+                <h3>Todo List:</h3>
+                <p>Click a todo to mark it complete!</p>
                 {props.array.map((arrayItem) => <Todo key={arrayItem.id} item={arrayItem} toggleTodo={props.toggleTodo}  />)}
             </div>
         )

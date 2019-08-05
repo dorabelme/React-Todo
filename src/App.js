@@ -10,9 +10,17 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   constructor(props) {
     super(props);
-    this.state = {
+    this.localStorageKey = 'todo-state';
+    this.state = JSON.parse(window.localStorage.getItem(this.localStorageKey)) || {
       todoListData: []
     };
+  }
+  
+  componentDidMount() {
+    window.addEventListener(
+      "beforeunload",
+      () => window.localStorage.setItem(this.localStorageKey, JSON.stringify(this.state))
+    );
   }
   
   updateList = event => {

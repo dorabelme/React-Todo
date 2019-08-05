@@ -18,13 +18,15 @@ class TodoForm extends Component {
     }
 
     render() {
+        const { todo } = this.state;
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
                         placeholder="Todo"
                         name="todo"
-                        value={this.state.todo}
+                        value={todo}
                         onChange={this.handleChange} />
                     <button className="btn add-btn" type="submit">Add Todo</button>
                     <button className="btn clear-btn" onClick={this.props.clearCompletedItems}>Clear Completed</button>
