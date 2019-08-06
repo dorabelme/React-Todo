@@ -9,7 +9,7 @@ import './components/TodoComponents/Todo.scss';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.localStorageKey = 'todo-state';
+    // this.localStorageKey = 'todo-state';
     // this.state = { todoListData: [], searchedTodo: '', ...(JSON.parse(window.localStorage.getItem(this.localStorageKey)) || {}) };
     this.state = {
       todoListData: [],
